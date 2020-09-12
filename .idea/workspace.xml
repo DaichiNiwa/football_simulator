@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5837afc-9033-41bb-a761-710e876c07e5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/football_simulator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/football_simulator.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,6 +136,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -152,7 +154,7 @@
       <updated>1599882956121</updated>
       <workItem from="1599882957155" duration="200000" />
       <workItem from="1599883161369" duration="3759000" />
-      <workItem from="1599893639896" duration="695000" />
+      <workItem from="1599893639896" duration="1459000" />
     </task>
     <servers />
   </component>
@@ -160,6 +162,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1583" y="523" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599894617743">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="1583" y="523" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2560.1417@0.23.2560.1417" timestamp="1599894617743" />
     <state x="1329" y="370" key="SettingsEditor" timestamp="1599893630710">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
