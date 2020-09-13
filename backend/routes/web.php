@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\PlayerController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('users/me', [UserController::class, 'show']);
+Route::resource('users', UserController::class, ['only' => ['index']]);
+Route::resource('players', PlayerController::class, ['only' => ['index']]);
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('login');
 });
+
+
+Route::middleware('auth')->group(static function() {
+
+    Route::get('dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+
+
+});
+

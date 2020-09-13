@@ -1,9 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f5837afc-9033-41bb-a761-710e876c07e5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/resources/views/users/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/football_simulator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/football_simulator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/webpack.mix.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -11,7 +46,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/backend/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -127,6 +162,26 @@
       <path value="$PROJECT_DIR$/backend/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/backend/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/backend/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/backend/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/backend/vendor/barryvdh/laravel-ide-helper" />
+      <path value="$PROJECT_DIR$/backend/vendor/barryvdh/reflection-docblock" />
+      <path value="$PROJECT_DIR$/backend/vendor/laravel/jetstream" />
+      <path value="$PROJECT_DIR$/backend/vendor/livewire/livewire" />
+      <path value="$PROJECT_DIR$/backend/vendor/jaybizzle/crawler-detect" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/backend/vendor/jenssegers/agent" />
+      <path value="$PROJECT_DIR$/backend/vendor/pragmarx/google2fa" />
+      <path value="$PROJECT_DIR$/backend/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/backend/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/backend/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/backend/vendor/mobiledetect/mobiledetectlib" />
+      <path value="$PROJECT_DIR$/backend/vendor/laravel/fortify" />
+      <path value="$PROJECT_DIR$/backend/vendor/justinrainbow/json-schema" />
+      <path value="$PROJECT_DIR$/backend/vendor/seld/phar-utils" />
+      <path value="$PROJECT_DIR$/backend/vendor/seld/jsonlint" />
+      <path value="$PROJECT_DIR$/backend/vendor/dasprid/enum" />
+      <path value="$PROJECT_DIR$/backend/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/backend/vendor/bacon/bacon-qr-code" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hOX8w1jYsqkBVoYYOcCTrDnQgU" />
@@ -154,12 +209,26 @@
       <updated>1599882956121</updated>
       <workItem from="1599882957155" duration="200000" />
       <workItem from="1599883161369" duration="3759000" />
-      <workItem from="1599893639896" duration="1459000" />
+      <workItem from="1599893639896" duration="2096000" />
+      <workItem from="1599895866994" duration="5609000" />
+      <workItem from="1599917694516" duration="12453000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1583" y="523" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599894617743">
@@ -170,5 +239,17 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="1329" y="370" key="SettingsEditor/0.23.2560.1417@0.23.2560.1417" timestamp="1599893630710" />
+    <state x="1094" y="713" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599915525907">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="1094" y="713" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.2560.1417@0.23.2560.1417" timestamp="1599915525907" />
+    <state x="921" y="398" width="746" height="924" key="find.popup" timestamp="1599975099407">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="921" y="398" width="746" height="924" key="find.popup/0.23.2560.1417@0.23.2560.1417" timestamp="1599975099407" />
+    <state x="1501" y="341" width="838" height="1032" key="search.everywhere.popup" timestamp="1599967518887">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="1501" y="341" width="838" height="1032" key="search.everywhere.popup/0.23.2560.1417@0.23.2560.1417" timestamp="1599967518887" />
   </component>
 </project>
