@@ -8,8 +8,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\UserController;
-
 class RouteServiceProvider extends ServiceProvider
 {
     /**
@@ -19,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = 'users';
+    public const HOME = 'users/me';
 
     /**
      * If specified, this namespace is automatically applied to your controller routes.

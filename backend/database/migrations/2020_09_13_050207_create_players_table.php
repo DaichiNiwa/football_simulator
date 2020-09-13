@@ -19,6 +19,7 @@ class CreatePlayersTable extends Migration
             $table->integer('country');
             $table->integer('attack_level');
             $table->integer('defense_level');
+            $table->integer('is_goalkeeper');
             $table->integer('price');
             $table->timestamps();
         });

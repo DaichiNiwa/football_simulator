@@ -58,4 +58,26 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function regular_players()
+    {
+        return $this->belongsToMany(
+            'App\Models\Player',
+            'affiliations',
+            'user_id',
+            'player_id',
+        )->wherePivot('is_regular', true);
+    }
+
+    public function reserve_players()
+    {
+        return $this->belongsToMany(
+            'App\Models\Player',
+            'affiliations',
+            'user_id',
+            'player_id',
+        )->wherePivot('is_regular', false);
+    }
+
+
 }

@@ -17,8 +17,8 @@ class CreateAffiliationsTable extends Migration
             $table->id();
             $table->bigInteger('user_id');
             $table->bigInteger('player_id');
-            $table->integer('is_under_contract');
-            $table->integer('is_regular');
+            $table->integer('is_under_contract')->default(true);
+            $table->integer('is_regular')->default(false);
             $table->timestamps();
         });
     }

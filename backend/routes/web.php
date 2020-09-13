@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AffiliationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PlayerController;
@@ -16,17 +17,16 @@ use App\Http\Controllers\PlayerController;
 |
 */
 
-Route::get('users/me', [UserController::class, 'show']);
-Route::resource('users', UserController::class, ['only' => ['index']]);
-Route::resource('players', PlayerController::class, ['only' => ['index']]);
-
-
 Route::get('/', function () {
     return redirect('login');
 });
 
-
 Route::middleware('auth')->group(static function() {
+
+    Route::get('users/me', [UserController::class, 'show'])->name('me');
+    Route::resource('users', UserController::class, ['only' => ['index', 'update']]);
+    Route::resource('players', PlayerController::class, ['only' => ['index']]);
+    Route::resource('affiliations', AffiliationController::class, ['only' => ['store', 'update']]);
 
     Route::get('dashboard', function () {
         return view('dashboard');

@@ -1,15 +1,20 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            マイページ
-        </h2>
-        {{ $user->name }}
+        <p class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ $user->name }}さんのマイページ
+        </p>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-            </div>
-        </div>
-    </div>
+    @if(isset($user->club_name))
+        <p class="font-semibold text-xl text-gray-800 leading-tight">
+            クラブ名：{{ $user->club_name }}
+        </p>
+    @else
+        <x-club-name-form :user="$user"/>
+    @endif
+
+    <x-regular-players-table />
+
+    <x-reserve-players-table />
+
 </x-app-layout>

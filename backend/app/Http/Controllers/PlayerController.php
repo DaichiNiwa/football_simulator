@@ -14,7 +14,8 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $players = Player::all();
+        return view('players.index', compact('players'));
     }
 
     /**

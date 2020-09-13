@@ -12,6 +12,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
         @livewireStyles
 
@@ -27,32 +28,32 @@
                         <div class="flex">
                             <!-- Logo -->
                             <div class="flex-shrink-0 flex items-center">
-                                <a href="/dashboard">
+                                <a href="/me">
                                     <x-jet-application-mark class="block h-9 w-auto" />
                                 </a>
                             </div>
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <x-jet-nav-link href="/dashboard" :active="request()->routeIs('dashboard')">
+                                <x-jet-nav-link href="{{ route('me') }}" :active="request()->routeIs('me')">
                                     マイページ
                                 </x-jet-nav-link>
                             </div>
 
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <x-jet-nav-link href="/dashboard" :active="request()->routeIs('dashboard')">
+                                <x-jet-nav-link href="{{ route('players.index') }}" :active="request()->routeIs('players.index')">
                                     マーケット
                                 </x-jet-nav-link>
                             </div>
 
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <x-jet-nav-link href="/dashboard" :active="request()->routeIs('dashboard')">
+                                <x-jet-nav-link href="{{ route('me') }}" :active="request()->routeIs('me')">
                                     対戦相手を探す
                                 </x-jet-nav-link>
                             </div>
 
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <x-jet-nav-link href="/dashboard" :active="request()->routeIs('dashboard')">
+                                <x-jet-nav-link href="{{ route('me') }}" :active="request()->routeIs('me')">
                                     銀行
                                 </x-jet-nav-link>
                             </div>
@@ -97,25 +98,25 @@
                 <!-- Responsive Navigation Menu -->
                 <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
-                        <x-jet-responsive-nav-link href="/dashboard" :active="request()->routeIs('dashboard')">
+                        <x-jet-responsive-nav-link href="{{ route('me') }}" :active="request()->routeIs('me')">
                             マイページ
                         </x-jet-responsive-nav-link>
                     </div>
 
                     <div class="pt-2 pb-3 space-y-1">
-                        <x-jet-responsive-nav-link href="/dashboard" :active="request()->routeIs('dashboard')">
+                        <x-jet-responsive-nav-link href="{{ route('me') }}" :active="request()->routeIs('players.index')">
                             マーケット
                         </x-jet-responsive-nav-link>
                     </div>
 
                     <div class="pt-2 pb-3 space-y-1">
-                        <x-jet-responsive-nav-link href="/dashboard" :active="request()->routeIs('dashboard')">
+                        <x-jet-responsive-nav-link href="{{ route('me') }}" :active="request()->routeIs('me')">
                             対戦相手を探す
                         </x-jet-responsive-nav-link>
                     </div>
 
                     <div class="pt-2 pb-3 space-y-1">
-                        <x-jet-responsive-nav-link href="/dashboard" :active="request()->routeIs('dashboard')">
+                        <x-jet-responsive-nav-link href="{{ route('me') }}" :active="request()->routeIs('me')">
                             銀行
                         </x-jet-responsive-nav-link>
                     </div>
@@ -159,7 +160,23 @@
 
             <!-- Page Content -->
             <main>
-                {{ $slot }}
+
+                @if (session('success'))
+                    <div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4" role="alert">
+                        <p>{{ session('success') }}</p>
+                    </div>
+                @elseif (session('error'))
+                    <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4" role="alert">
+                        <p>{{ session('error') }}</p>
+                    </div>
+                @endif
+                    <div class="py-12">
+                        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                            <div class="bg-white p-6 overflow-hidden shadow-xl sm:rounded-lg">
+                                {{ $slot }}
+                            </div>
+                        </div>
+                    </div>
             </main>
         </div>
 
