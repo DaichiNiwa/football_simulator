@@ -129,6 +129,11 @@
       <path value="$PROJECT_DIR$/backend/vendor/dasprid/enum" />
       <path value="$PROJECT_DIR$/backend/vendor/paragonie/constant_time_encoding" />
       <path value="$PROJECT_DIR$/backend/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/backend/vendor/hanneskod/classtools" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-eventmanager" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/backend/vendor/bensampo/laravel-enum" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

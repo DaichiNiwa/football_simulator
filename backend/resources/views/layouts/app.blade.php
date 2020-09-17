@@ -47,7 +47,7 @@
                             </div>
 
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <x-jet-nav-link href="{{ route('me') }}" :active="request()->routeIs('me')">
+                                <x-jet-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">
                                     対戦相手を探す
                                 </x-jet-nav-link>
                             </div>
@@ -104,13 +104,13 @@
                     </div>
 
                     <div class="pt-2 pb-3 space-y-1">
-                        <x-jet-responsive-nav-link href="{{ route('me') }}" :active="request()->routeIs('players.index')">
+                        <x-jet-responsive-nav-link href="{{ route('players.index') }}" :active="request()->routeIs('players.index')">
                             マーケット
                         </x-jet-responsive-nav-link>
                     </div>
 
                     <div class="pt-2 pb-3 space-y-1">
-                        <x-jet-responsive-nav-link href="{{ route('me') }}" :active="request()->routeIs('me')">
+                        <x-jet-responsive-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">
                             対戦相手を探す
                         </x-jet-responsive-nav-link>
                     </div>

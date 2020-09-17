@@ -20,25 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5837afc-9033-41bb-a761-710e876c07e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/resources/views/users/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/resources/views/users/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/football_simulator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/football_simulator.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Enums/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Enums/Country.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/AffiliationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/AffiliationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/PlayerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/PlayerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/Affiliation.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Affiliation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/View/Components/RegularPlayersTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/View/Components/RegularPlayersTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/View/Components/ReservePlayersTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/View/Components/ReservePlayersTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/seeders/PlayerSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/seeders/PlayerSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/lang/ja/enums.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/lang/ja/enums.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/views/components/regular-players-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/components/regular-players-table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/views/components/reserve-players-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/components/reserve-players-table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/views/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/users/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/webpack.mix.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -182,6 +182,11 @@
       <path value="$PROJECT_DIR$/backend/vendor/dasprid/enum" />
       <path value="$PROJECT_DIR$/backend/vendor/paragonie/constant_time_encoding" />
       <path value="$PROJECT_DIR$/backend/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/backend/vendor/hanneskod/classtools" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-eventmanager" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/backend/vendor/bensampo/laravel-enum" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hOX8w1jYsqkBVoYYOcCTrDnQgU" />
@@ -196,7 +201,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Blade" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -211,7 +216,9 @@
       <workItem from="1599883161369" duration="3759000" />
       <workItem from="1599893639896" duration="2096000" />
       <workItem from="1599895866994" duration="5609000" />
-      <workItem from="1599917694516" duration="12453000" />
+      <workItem from="1599917694516" duration="12943000" />
+      <workItem from="1599977048681" duration="1374000" />
+      <workItem from="1599978467652" duration="28611000" />
     </task>
     <servers />
   </component>
@@ -235,21 +242,45 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="1583" y="523" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2560.1417@0.23.2560.1417" timestamp="1599894617743" />
-    <state x="1329" y="370" key="SettingsEditor" timestamp="1599893630710">
+    <state x="964" y="589" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600265728612">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="1329" y="370" key="SettingsEditor/0.23.2560.1417@0.23.2560.1417" timestamp="1599893630710" />
-    <state x="1094" y="713" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599915525907">
+    <state x="964" y="589" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.2560.1417@0.23.2560.1417" timestamp="1600265728612" />
+    <state x="865" y="368" key="SettingsEditor" timestamp="1599978800583">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="1094" y="713" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.2560.1417@0.23.2560.1417" timestamp="1599915525907" />
-    <state x="921" y="398" width="746" height="924" key="find.popup" timestamp="1599975099407">
+    <state x="865" y="368" key="SettingsEditor/0.23.2560.1417@0.23.2560.1417" timestamp="1599978800583" />
+    <state x="1094" y="713" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600092666553">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="921" y="398" width="746" height="924" key="find.popup/0.23.2560.1417@0.23.2560.1417" timestamp="1599975099407" />
-    <state x="1501" y="341" width="838" height="1032" key="search.everywhere.popup" timestamp="1599967518887">
+    <state x="1094" y="713" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.2560.1417@0.23.2560.1417" timestamp="1600092666553" />
+    <state x="921" y="398" width="748" height="924" key="find.popup" timestamp="1600266155316">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="1501" y="341" width="838" height="1032" key="search.everywhere.popup/0.23.2560.1417@0.23.2560.1417" timestamp="1599967518887" />
+    <state x="921" y="398" width="748" height="924" key="find.popup/0.23.2560.1417@0.23.2560.1417" timestamp="1600266155316" />
+    <state x="1501" y="341" width="838" height="1032" key="search.everywhere.popup" timestamp="1600354065850">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="1501" y="341" width="838" height="1032" key="search.everywhere.popup/0.23.2560.1417@0.23.2560.1417" timestamp="1600354065850" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/backend/resources/views/dashboard.blade.php</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/backend/resources/views/users/show.blade.php</url>
+          <line>3</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/backend/resources/views/layouts/app.blade.php</url>
+          <line>3</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -30,6 +30,7 @@ class AffiliationController extends Controller
 
         return redirect(route('players.index'));
     }
+
     /**
      * Update the specified resource in storage.
      *
@@ -40,5 +41,12 @@ class AffiliationController extends Controller
     public function update(Request $request, Affiliation $affiliation)
     {
         //
+    }
+
+    public function changeIsRegular(Affiliation $affiliation)
+    {
+        $affiliation->is_regular = !$affiliation->is_regular;
+        $affiliation->save();
+        return redirect(route('me'));
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -59,6 +60,11 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    public function affiliations()
+    {
+        return $this->hasMany('App\Models\Affiliation');
+    }
+
     public function regular_players()
     {
         return $this->belongsToMany(
@@ -79,5 +85,24 @@ class User extends Authenticatable
         )->wherePivot('is_regular', false);
     }
 
+    public function goalkeepersInRegular() {
+        return $this->affiliations()
+            ->regular()
+            ->whereHas('player', function (Builder $query) {
+            $query->where('is_goalkeeper', true);
+        })->get();
+    }
+
+    public function canStartMatch() {
+        return $this->isElevenPlayersInRegular() && $this->isOneGoalkeeperInRegular();
+    }
+
+    public function isOneGoalkeeperInRegular() {
+        return $this->goalkeepersInRegular()->count() === 1;
+    }
+
+    public function isElevenPlayersInRegular() {
+        return $this->affiliations()->regular()->count() === 11;
+    }
 
 }

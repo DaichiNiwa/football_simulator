@@ -17,8 +17,8 @@ class ReservePlayersTable extends Component
         //
     }
 
-    public function players() {
-        return Auth::user()->reserve_players;
+    public function affiliations() {
+        return Auth::user()->affiliations()->with('player')->reserve()->get();
     }
 
     /**

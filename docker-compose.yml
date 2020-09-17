@@ -25,6 +25,8 @@ services:
       - MYSQL_PASSWORD=secret
       - MYSQL_ROOT_PASSWORD=secret
       - TZ=Asia/Tokyo
+    ports:
+      - 33060:3306
 
 volumes:
   db-store:

@@ -12,6 +12,7 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/bacon/bacon-qr-code" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/barryvdh/laravel-ide-helper" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/barryvdh/reflection-docblock" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/bensampo/laravel-enum" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/dasprid/enum" />
@@ -36,9 +37,13 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/guzzlehttp/promises" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/hamcrest/hamcrest-php" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/hanneskod/classtools" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/jaybizzle/crawler-detect" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/jenssegers/agent" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/justinrainbow/json-schema" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/laminas/laminas-code" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/laminas/laminas-eventmanager" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/laminas/laminas-zendframework-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/laravel/fortify" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/laravel/framework" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/laravel/jetstream" />

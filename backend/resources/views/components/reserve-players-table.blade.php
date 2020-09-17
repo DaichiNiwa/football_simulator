@@ -14,20 +14,20 @@
     </tr>
     </thead>
     <tbody class="table-striped">
-    @foreach($players as $player)
+    @foreach($affiliations as $affiliation)
         <tr @if($loop->even) class="bg-blue-100" @endif>
             <td class="border px-4 py-2">
-                {{ $player->name }}
-                @if($player->is_goalkeeper)<span class="bg-red-500 text-white rounded p-1">GK</span>@endif
+                {{ $affiliation->player->name }}
+                @if($affiliation->player->is_goalkeeper)<span class="bg-red-500 text-white rounded p-1">GK</span>@endif
             </td>
-            <td class="border px-4 py-2">{{ $player->attack_level }}</td>
-            <td class="border px-4 py-2">{{ $player->defense_level }}</td>
-            <td class="border px-4 py-2">{{ $player->country() }}</td>
-            <td class="border px-4 py-2">{{ $player->price }}</td>
+            <td class="border px-4 py-2">{{ $affiliation->player->attack_level }}</td>
+            <td class="border px-4 py-2">{{ $affiliation->player->defense_level }}</td>
+            <td class="border px-4 py-2">{{ $affiliation->player->country() }}</td>
+            <td class="border px-4 py-2">{{ $affiliation->player->price }}</td>
             <td class="border px-4 py-2">
-                <form method="POST" action="{{ route('affiliations.store') }}">
+                <form method="POST" action="{{ route('changeIsRegular', $affiliation) }}">
                     @csrf
-                    <x-jet-input class="hidden" type="number" name="player_id" :value="$player->id" />
+                    @method ('PATCH')
                     <x-jet-button>
                         レギュラーにする
                     </x-jet-button>

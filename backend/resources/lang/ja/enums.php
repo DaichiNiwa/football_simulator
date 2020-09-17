@@ -12,5 +12,6 @@ return [
         Country::Argentina => 'アルゼンチン',
         Country::Portugal => 'ポルトガル',
         Country::Thailand => 'タイ',
+        Country::Belgium => 'ベルギー',
     ],
 ];

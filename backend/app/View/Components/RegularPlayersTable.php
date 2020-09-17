@@ -14,10 +14,15 @@ class RegularPlayersTable extends Component
      */
     public function __construct()
     {
+        
     }
 
-    public function players() {
-        return Auth::user()->regular_players;
+    public function affiliations() {
+        return Auth::user()->affiliations()->with('player')->regular()->get();
+    }
+
+    public function goalkeepers() {
+        return Auth::user()->goalkeepersInRegular();
     }
 
     /**
