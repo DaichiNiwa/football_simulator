@@ -4,6 +4,7 @@ use App\Http\Controllers\AffiliationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\MatchController;
 
 
 /*
@@ -34,7 +35,7 @@ Route::middleware('auth')->group(static function () {
         ['only' => ['index']]
     );
 
-    Route::patch('affiliations/{affiliation}/regular-set',
+    Route::patch('affiliations/{affiliation}/regular-change',
         [AffiliationController::class, 'changeIsRegular']
     )->name('changeIsRegular');
 
@@ -43,9 +44,14 @@ Route::middleware('auth')->group(static function () {
         ['only' => ['store', 'update']]
     );
 
-    Route::get('dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::resource('matches',
+        MatchController::class,
+        ['only' => ['create', 'store']]
+    );
+
+//    Route::get('dashboard', function () {
+//        return view('dashboard');
+//    })->name('dashboard');
 
 
 //    Route::resources([

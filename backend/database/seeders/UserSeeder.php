@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
         );
 
         User::factory()
-            ->times(5)
+            ->times(3)
             ->create();
     }
 }

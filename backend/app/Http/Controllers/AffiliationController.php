@@ -20,15 +20,10 @@ class AffiliationController extends Controller
     public function store(AffiliationStoreRequest $request)
     {
         $player_id = $request->get('player_id');
-        $affiliation = new Affiliation();
-        $affiliation->user_id = Auth::user()->id;
-        $affiliation->player_id = $player_id;
+        Affiliation::storeAffiliation($player_id);
         $player = Player::find($player_id);
 
-        $affiliation->save();
-        $request->session()->flash('success', $player->name . 'と契約しました');
-
-        return redirect(route('players.index'));
+        return back()->with('success', $player->name . 'と契約しました');
     }
 
     /**
@@ -47,6 +42,6 @@ class AffiliationController extends Controller
     {
         $affiliation->is_regular = !$affiliation->is_regular;
         $affiliation->save();
-        return redirect(route('me'));
+        return back();
     }
 }

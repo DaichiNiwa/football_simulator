@@ -17,3 +17,4 @@ final class Country extends Enum implements LocalizedEnum
     const Thailand = 7;
     const Belgium = 8;
 }
+

@@ -35,7 +35,7 @@ class Player extends Model
     {
         parent::boot();
         static::addGlobalScope('order', function (Builder $builder) {
-            $builder->orderBy('is_goalkeeper');
+            $builder->orderBy('is_goalkeeper')->orderByDesc( 'price');
         });
     }
 
@@ -48,8 +48,6 @@ class Player extends Model
     {
         return $query->where('votes', '>', 100);
     }
-
-
 
     /**
      * @return string 出身国名

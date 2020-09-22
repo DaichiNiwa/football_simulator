@@ -19,6 +19,7 @@
         <x-jet-validation-errors class="mb-4"/>
         <thead>
         <tr>
+            <th class="px-4 py-2"></th>
             <th class="px-4 py-2">クラブ名</th>
             <th class="px-4 py-2">オーナー</th>
             <th class="px-4 py-2">総合力</th>
@@ -27,16 +28,24 @@
         </tr>
         </thead>
         <tbody class="table-striped">
-        @foreach($users as $user)
+        @foreach($opponents as $opponent)
             <tr @if($loop->even) class="bg-blue-100" @endif>
-                <td class="border px-4 py-2">{{ $user->club_name }}</td>
-                <td class="border px-4 py-2">{{ $user->name }}</td>
-                <td class="border px-4 py-2">500</td>
+                <td class="border px-4 py-2">{{ $loop->iteration }}</td>
+                <td class="border px-4 py-2">{{ $opponent->club_name }}</td>
+                <td class="border px-4 py-2">{{ $opponent->name }}</td>
+                <td class="border px-4 py-2">{{ $opponent->ClubStrength() }}</td>
                 <td class="border px-4 py-2">1勝１敗</td>
                 <td class="border px-4 py-2">
-                        <x-jet-button>
-                            対戦する
-                        </x-jet-button>
+                    @if($me->canStartMatch() && $opponent->canStartMatch())
+                        <form method="" action="{{ route('matches.create') }}">
+                            <x-jet-input type="hidden" name="opponent_id" value="{{ $opponent->id }}"/>
+                            <x-jet-button>
+                                対戦する
+                            </x-jet-button>
+                        </form>
+                    @else
+                        <p>試合はできません</p>
+                    @endif
                 </td>
             </tr>
         @endforeach

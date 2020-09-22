@@ -1,22 +1,12 @@
 <p class="font-semibold mt-8 text-xl text-blue-1000 leading-tight">
-    レギュラーメンバー
+    あなたのクラブ：{{ $user->club_name }}
 </p>
-@if($affiliations->count() === 11)
-    <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 my-4" role="alert">
-        <p>現在レギュラーメンバーは11人です。</p>
-    </div>
-@else
+<h2>（オーナー：{{ $user->name }}）</h2>
+<p>（レギュラー総合力：{{ $user->ClubStrength() }}）</p>
+
+@if(!$user->canStartMatch())
     <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4 my-4" role="alert">
-        <p>レギュラーメンバーを11人にしないと試合はできません。（現在{{ $affiliations->count() }}）</p>
-    </div>
-@endif
-@if($goalkeepers->count() === 1)
-    <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 my-4" role="alert">
-        <p>現在ゴールキーパーが1人入っています。</p>
-    </div>
-@else
-    <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4 my-4" role="alert">
-        <p>ゴールキーパーを1人にしないと試合はできません。（現在{{ $goalkeepers->count() }}）</p>
+        <p>現在レギュラーメンバーが11人になっていないか、ゴールキーパーが1人ではないため、試合ができません。</p>
     </div>
 @endif
 
@@ -30,7 +20,6 @@
         <th class="px-4 py-2">守備力</th>
         <th class="px-4 py-2">出身国</th>
         <th class="px-4 py-2">現在の市場価格</th>
-        <th class="px-4 py-2"></th>
     </tr>
     </thead>
     <tbody class="table-striped">
@@ -45,15 +34,6 @@
             <td class="border px-4 py-2">{{ $affiliation->currentDefenseLevel() }}</td>
             <td class="border px-4 py-2">{{ $affiliation->player->country() }}</td>
             <td class="border px-4 py-2">{{ $affiliation->currentPrice() }} ペリカ</td>
-            <td class="border px-4 py-2">
-                <form method="POST" action="{{ route('changeIsRegular', $affiliation) }}">
-                    @csrf
-                    @method ('PATCH')
-                    <x-jet-button>
-                        レギュラーからはずす
-                    </x-jet-button>
-                </form>
-            </td>
         </tr>
     @endforeach
 

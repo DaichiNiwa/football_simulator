@@ -1,6 +1,9 @@
-<p class="font-semibold mt-8 text-xl text-gray-1000 leading-tight">
-    控えメンバー
+<p class="font-semibold mt-8 text-xl text-blue-1000 leading-tight">
+    対戦相手：{{ $opponent->club_name }}
 </p>
+<h2>（オーナー：{{ $opponent->name }}）</h2>
+<p>（レギュラー総合力：{{ $opponent->ClubStrength() }}）</p>
+
 <table class="table-auto border-separate">
     <thead>
     <tr>
@@ -10,7 +13,6 @@
         <th class="px-4 py-2">守備力</th>
         <th class="px-4 py-2">出身国</th>
         <th class="px-4 py-2">現在の市場価格</th>
-        <th class="px-4 py-2"></th>
     </tr>
     </thead>
     <tbody class="table-striped">
@@ -25,15 +27,6 @@
             <td class="border px-4 py-2">{{ $affiliation->currentDefenseLevel() }}</td>
             <td class="border px-4 py-2">{{ $affiliation->player->country() }}</td>
             <td class="border px-4 py-2">{{ $affiliation->currentPrice() }} ペリカ</td>
-            <td class="border px-4 py-2">
-                <form method="POST" action="{{ route('changeIsRegular', $affiliation) }}">
-                    @csrf
-                    @method ('PATCH')
-                    <x-jet-button>
-                        レギュラーにする
-                    </x-jet-button>
-                </form>
-            </td>
         </tr>
     @endforeach
 

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -60,49 +61,96 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    /**
+     * @return HasMany
+     */
     public function affiliations()
     {
         return $this->hasMany('App\Models\Affiliation');
     }
 
-    public function regular_players()
+//    public function regular_players()
+//    {
+//        return $this->belongsToMany(
+//            'App\Models\Player',
+//            'affiliations',
+//            'user_id',
+//            'player_id',
+//        )->wherePivot('is_regular', true);
+//    }
+//
+//    public function reserve_players()
+//    {
+//        return $this->belongsToMany(
+//            'App\Models\Player',
+//            'affiliations',
+//            'user_id',
+//            'player_id',
+//        )->wherePivot('is_regular', false);
+//    }
+
+    /**
+     * @return HasMany
+     */
+    public function regularPlayers()
     {
-        return $this->belongsToMany(
-            'App\Models\Player',
-            'affiliations',
-            'user_id',
-            'player_id',
-        )->wherePivot('is_regular', true);
+        return $this->affiliations()->regular();
     }
 
-    public function reserve_players()
-    {
-        return $this->belongsToMany(
-            'App\Models\Player',
-            'affiliations',
-            'user_id',
-            'player_id',
-        )->wherePivot('is_regular', false);
-    }
-
+    /**
+     * @return Builder[]|\Illuminate\Database\Eloquent\Collection|HasMany[]
+     */
     public function goalkeepersInRegular() {
-        return $this->affiliations()
-            ->regular()
+        return $this->regularPlayers()
             ->whereHas('player', function (Builder $query) {
             $query->where('is_goalkeeper', true);
         })->get();
     }
 
+    /**
+     * @return bool
+     */
     public function canStartMatch() {
         return $this->isElevenPlayersInRegular() && $this->isOneGoalkeeperInRegular();
     }
 
-    public function isOneGoalkeeperInRegular() {
+    /**
+     * @return bool
+     */
+    public function ClubStrength() {
+        if (!$this->canStartMatch()) {
+            return null;
+        }
+
+        return $this->sumRegularPlayersStrength();
+    }
+
+    /**
+     * @return bool
+     */
+    private function isOneGoalkeeperInRegular() {
         return $this->goalkeepersInRegular()->count() === 1;
     }
 
-    public function isElevenPlayersInRegular() {
-        return $this->affiliations()->regular()->count() === 11;
+    /**
+     * @return bool
+     */
+    private function isElevenPlayersInRegular() {
+        return $this->regularPlayers()->count() === 11;
     }
+
+    private function sumRegularPlayersStrength() {
+        $regularPlayers = $this->regularPlayers()->get();
+        $sum = 0;
+
+        foreach ($regularPlayers as $regularPlayer) {
+            $sum += $regularPlayer->currentStrength();
+        }
+
+        return $sum;
+    }
+
+
+
 
 }
