@@ -2,7 +2,7 @@
     対戦相手：{{ $opponent->club_name }}
 </p>
 <h2>（オーナー：{{ $opponent->name }}）</h2>
-<p>（レギュラー総合力：{{ $opponent->ClubStrength() }}）</p>
+<p>（レギュラー総合力：{{ $opponent->clubStrength() }}）</p>
 
 <table class="table-auto border-separate">
     <thead>

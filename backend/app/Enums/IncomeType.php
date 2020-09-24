@@ -10,8 +10,10 @@ use BenSampo\Enum\Enum;
  * @method static static OptionTwo()
  * @method static static OptionThree()
  */
-final class PlayerSkillType extends Enum implements LocalizedEnum
+final class IncomeType extends Enum implements LocalizedEnum
 {
-    const Attack = 0;
-    const Defense = 1;
+    const InitialBonus =   0;
+    const MatchPrize =   1;
+    const SellingPlayer =   2;
+    const Loan = 3;
 }

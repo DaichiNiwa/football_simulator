@@ -1,6 +1,7 @@
 <?php
 
 use App\Enums\Country;
+use App\Enums\IncomeType;
 use App\Enums\PlayerSkillType;
 
 return [
@@ -17,7 +18,14 @@ return [
     ],
 
     PlayerSkillType::class => [
-        PlayerSkillType::ATTACK => '攻撃力',
-        PlayerSkillType::DEFENSE => '守備力',
+        PlayerSkillType::Attack => '攻撃力',
+        PlayerSkillType::Defense => '守備力',
+    ],
+
+    IncomeType::class => [
+        IncomeType::InitialBonus => '初回ボーナス',
+        IncomeType::MatchPrize => '賞金',
+        IncomeType::SellingPlayer => '選手売却',
+        IncomeType::Loan => 'ローン',
     ],
 ];

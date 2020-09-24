@@ -69,6 +69,14 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Affiliation');
     }
 
+    /**
+     * @return HasMany
+     */
+    public function matches()
+    {
+        return $this->hasMany('App\Models\Match');
+    }
+
 //    public function regular_players()
 //    {
 //        return $this->belongsToMany(
@@ -117,12 +125,41 @@ class User extends Authenticatable
     /**
      * @return bool
      */
-    public function ClubStrength() {
+    public function clubStrength() {
         if (!$this->canStartMatch()) {
             return null;
         }
 
         return $this->sumRegularPlayersStrength();
+    }
+
+    /**
+     * @return int
+     */
+    public function wonMatchesCountAgainst(User $opponent) {
+        return $this->matches()
+            ->where('opponent_id', $opponent->id)
+            ->where('did_win', true)
+            ->count();
+    }
+
+    /**
+     * @return int
+     */
+    public function lostMatchesCountAgainst(User $opponent) {
+        return $this->matches()
+            ->where('opponent_id', $opponent->id)
+            ->where('did_win', false)
+            ->count();
+    }
+
+    /**
+     * ゲーム内の日付
+     * 第1日目から始まり、1試合やるごとに1日進みます。
+     * @return int
+     */
+    public function date() {
+        return 1 + $this->matches()->count();
     }
 
     /**

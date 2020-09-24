@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Income;
 use App\Models\Match;
 use App\Models\PlayerLevelUp;
 use App\Models\User;
@@ -12,7 +13,7 @@ class MatchStoreService
 {
     public static function execute(User $me, User $opponent)
     {
-        $result = DB::transaction(
+        return DB::transaction(
             function () use ($me, $opponent) {
                 $result = Collection::make();
 
@@ -20,12 +21,10 @@ class MatchStoreService
 
                 if ($result->isMeWinner) {
                     $result->grew = PlayerLevelUp::levelUp($result);
-        // TODO: 勝ちなら、賞金１ペリカもらえる
+                    Income::winPrize($me->id, $result->matchId);
                 }
                 return $result;
             });
-
-        return $result;
     }
 
 
@@ -55,8 +54,8 @@ class MatchStoreService
      */
     private static function decideWinner(User $me, User $opponent)
     {
-        $meWinningRate = $me->ClubStrength();
-        $opponentWinningRate = $opponent->ClubStrength();
+        $meWinningRate = $me->clubStrength();
+        $opponentWinningRate = $opponent->clubStrength();
 
         $resultNumber = mt_rand(1, $meWinningRate + $opponentWinningRate);
 
@@ -72,11 +71,12 @@ class MatchStoreService
      * @param User $opponent
      * @param bool $isMeWinner
      */
-    private static function recordMatch(User $me, User $opponent, $isMeWinner)
+    private static function recordMatch(User $me, User $opponent, bool $isMeWinner)
     {
         $match = Match::create([
-            'winner_id' => $isMeWinner ? $me->id : $opponent->id,
-            'loser_id' => $isMeWinner ? $opponent->id : $me->id,
+            'user_id' => $me->id,
+            'opponent_id' => $opponent->id,
+            'did_win' => $isMeWinner,
         ]);
 
         return $match->id;

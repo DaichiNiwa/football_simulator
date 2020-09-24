@@ -11,6 +11,7 @@
         <th class="px-4 py-2">出身国</th>
         <th class="px-4 py-2">現在の市場価格</th>
         <th class="px-4 py-2"></th>
+        <th class="px-4 py-2"></th>
     </tr>
     </thead>
     <tbody class="table-striped">
@@ -31,6 +32,15 @@
                     @method ('PATCH')
                     <x-jet-button>
                         レギュラーにする
+                    </x-jet-button>
+                </form>
+            </td>
+            <td class="border px-4 py-2">
+                <form method="POST" action="{{ route('affiliations.update', $affiliation) }}">
+                    @csrf
+                    @method ('PATCH')
+                    <x-jet-button>
+                        売却する
                     </x-jet-button>
                 </form>
             </td>

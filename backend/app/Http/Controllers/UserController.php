@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ClubNameStoreRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 
@@ -43,12 +42,16 @@ class UserController extends Controller
     public function update(ClubNameStoreRequest $request)
     {
         $user = Auth::user();
-        // TODO: 初期ペリカ２０支給
+
         if (is_null($user->club_name)) {
-            $user->club_name = $request->get('club_name');
-            $user->save();
+            $club_name = $request->get('club_name');
+
+            $clubNameStoreService = app('App\Services\ClubNameStoreService');
+            $clubNameStoreService::execute($user, $club_name);
+
             $request->session()->flash('success', 'クラブ名を登録しました。');
         }
+
         return back();
     }
 }

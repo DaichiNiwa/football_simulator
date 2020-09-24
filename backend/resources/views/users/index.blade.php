@@ -23,7 +23,7 @@
             <th class="px-4 py-2">クラブ名</th>
             <th class="px-4 py-2">オーナー</th>
             <th class="px-4 py-2">総合力</th>
-            <th class="px-4 py-2">通算成績</th>
+            <th class="px-4 py-2">対戦成績</th>
             <th class="px-4 py-2"></th>
         </tr>
         </thead>
@@ -33,8 +33,8 @@
                 <td class="border px-4 py-2">{{ $loop->iteration }}</td>
                 <td class="border px-4 py-2">{{ $opponent->club_name }}</td>
                 <td class="border px-4 py-2">{{ $opponent->name }}</td>
-                <td class="border px-4 py-2">{{ $opponent->ClubStrength() }}</td>
-                <td class="border px-4 py-2">1勝１敗</td>
+                <td class="border px-4 py-2">{{ $opponent->clubStrength() }}</td>
+                <td class="border px-4 py-2">{{ $me->wonMatchesCountAgainst($opponent) }}勝{{ $me->lostMatchesCountAgainst($opponent) }}敗</td>
                 <td class="border px-4 py-2">
                     @if($me->canStartMatch() && $opponent->canStartMatch())
                         <form method="" action="{{ route('matches.create') }}">

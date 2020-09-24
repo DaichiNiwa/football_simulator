@@ -29,7 +29,7 @@ class PlayerLevelUp extends Model
      */
     public function scopeAttack($query)
     {
-        return $query->where('level_up_type', PlayerSkillType::ATTACK);
+        return $query->where('level_up_type', PlayerSkillType::Attack);
     }
 
     /**
@@ -38,7 +38,7 @@ class PlayerLevelUp extends Model
      */
     public function scopeDefense($query)
     {
-        return $query->where('level_up_type', PlayerSkillType::DEFENSE);
+        return $query->where('level_up_type', PlayerSkillType::Defense);
     }
 
     /**

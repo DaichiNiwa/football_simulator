@@ -33,9 +33,16 @@ class AffiliationController extends Controller
      * @param  \App\Models\Affiliation  $affiliation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Affiliation $affiliation)
+    public function update(Affiliation $affiliation)
     {
-        //
+        if($affiliation->user_id !== Auth::user()->id) {
+            return back()->with('error', '不正な選手が入力されました。');
+        }
+
+        $affiliationUpdateService = app('App\Services\AffiliationUpdateService');
+        $affiliationUpdateService::execute($affiliation);
+
+        return back()->with('success', $affiliation->player->name . 'を売却しました。');
     }
 
     public function changeIsRegular(Affiliation $affiliation)

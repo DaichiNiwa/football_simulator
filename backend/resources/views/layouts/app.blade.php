@@ -60,7 +60,12 @@
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-jet-nav-link>
-                            レギュラー総合力：{{ Auth::user()->ClubStrength() }}
+                            総合力：{{ Auth::user()->clubStrength() }}
+                        </x-jet-nav-link>
+                    </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link>
+                            第{{ Auth::user()->date() }}日目
                         </x-jet-nav-link>
                     </div>
                 </div>
@@ -138,7 +143,13 @@
 
             <div class="pt-2 pb-3 space-y-1">
                 <x-jet-responsive-nav-link>
-                    レギュラー総合力：{{ Auth::user()->ClubStrength() }}
+                    総合力：{{ Auth::user()->clubStrength() }}
+                </x-jet-responsive-nav-link>
+            </div>
+
+            <div class="pt-2 pb-3 space-y-1">
+                <x-jet-responsive-nav-link>
+                    第{{ Auth::user()->date() }}日目
                 </x-jet-responsive-nav-link>
             </div>
 

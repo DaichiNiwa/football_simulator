@@ -16,8 +16,9 @@ class Match extends Model
      * @var array
      */
     protected $fillable = [
-        'winner_id',
-        'loser_id',
+        'user_id',
+        'opponent_id',
+        'did_win',
     ];
 
     /**
@@ -25,7 +26,8 @@ class Match extends Model
      * @param User $opponent
      * @return bool
      */
-    public static function canStart(User $me, User $opponent) {
+    public static function canStart(User $me, User $opponent)
+    {
         return $me->canStartMatch() && $opponent->canStartMatch();
     }
 }

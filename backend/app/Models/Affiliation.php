@@ -15,10 +15,12 @@ class Affiliation extends Model
     protected $fillable = [
         'user_id',
         'player_id',
+        'is_under_contract',
+        'is_regular',
     ];
 
     /**
-     *選手はフィールドプレーヤーが先に、ゴールキーパーが後になるように必ず並べる
+     *売却して契約が終わった選手は一切表示しない
      * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
