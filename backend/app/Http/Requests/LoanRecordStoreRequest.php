@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AffiliationStoreRequest extends FormRequest
+class LoanRecordStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class AffiliationStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'player_id' => ['required', 'integer', 'max:100000', 'exists:players,id', ]
+            'loan_option_id' => ['required', 'integer', 'max:100000', 'exists:loan_options,id']
         ];
     }
 }

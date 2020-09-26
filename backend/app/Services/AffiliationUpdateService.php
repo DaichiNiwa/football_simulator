@@ -16,7 +16,7 @@ class AffiliationUpdateService
                 $affiliation->is_under_contract = false;
                 $affiliation->save();
 
-                Income::SellPlayer($affiliation);
+                Income::sellPlayer($affiliation);
             }
         );
     }

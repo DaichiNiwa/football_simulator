@@ -5,33 +5,34 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AffiliationStoreRequest;
 use App\Models\Affiliation;
 use App\Models\Player;
-use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
 class AffiliationController extends Controller
 {
 
     /**
-     * Store a newly created resource in storage.
-     *
      * @param AffiliationStoreRequest $request
-     * @return void
+     * @return RedirectResponse
      */
     public function store(AffiliationStoreRequest $request)
     {
         $player_id = $request->get('player_id');
-        Affiliation::storeAffiliation($player_id);
         $player = Player::find($player_id);
+
+        if($player->price > Auth::user()->currentPelica()) {
+            return back()->with('error', '所持ペリカが足りません。');
+        }
+
+        $affiliationStoreService = app('App\Services\AffiliationStoreService');
+        $affiliationStoreService::execute($player);
 
         return back()->with('success', $player->name . 'と契約しました');
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Affiliation  $affiliation
-     * @return \Illuminate\Http\Response
+     * @param  Affiliation $affiliation
+     * @return RedirectResponse
      */
     public function update(Affiliation $affiliation)
     {
@@ -45,6 +46,10 @@ class AffiliationController extends Controller
         return back()->with('success', $affiliation->player->name . 'を売却しました。');
     }
 
+    /**
+     * @param  Affiliation $affiliation
+     * @return RedirectResponse
+     */
     public function changeIsRegular(Affiliation $affiliation)
     {
         $affiliation->is_regular = !$affiliation->is_regular;

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AffiliationController;
+use App\Http\Controllers\LoanOptionController;
+use App\Http\Controllers\LoanRecordController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PlayerController;
@@ -49,16 +51,19 @@ Route::middleware('auth')->group(static function () {
         ['only' => ['create', 'store']]
     );
 
+    Route::resource('loans',
+        LoanOptionController::class,
+        ['only' => 'index']
+    );
+
+    Route::resource('loan-records',
+        LoanRecordController::class,
+        ['only' => ['store', 'update']]
+    );
+
 //    Route::get('dashboard', function () {
 //        return view('dashboard');
 //    })->name('dashboard');
-
-
-//    Route::resources([
-//        'users' => UserController::class,
-//        'players' => PlayerController::class,
-//        'affiliations' => AffiliationController::class,
-//    ]);
 
 });
 

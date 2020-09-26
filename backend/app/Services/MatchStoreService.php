@@ -15,14 +15,20 @@ class MatchStoreService
     {
         return DB::transaction(
             function () use ($me, $opponent) {
-                $result = Collection::make();
+                $result = new Collection();
 
-                $result = self::playMatch($me, $opponent, $result);
+                self::playMatch($me, $opponent, $result);
 
                 if ($result->isMeWinner) {
-                    $result->grew = PlayerLevelUp::levelUp($result);
-                    Income::winPrize($me->id, $result->matchId);
+                    PlayerLevelUp::levelUp($result);
+                    Income::winPrize($result->matchId);
                 }
+
+                // NOTE: 試合をして1日進んだ結果、ローンの返済期限を過ぎてしまった場合、強制返済される
+                if ($me->isOverLoanDeadline()) {
+                    dd('error');
+                }
+
                 return $result;
             });
     }
@@ -38,8 +44,6 @@ class MatchStoreService
     {
         $result->isMeWinner = self::decideWinner($me, $opponent);
         $result->matchId = self::recordMatch($me, $opponent, $result->isMeWinner);
-
-        return $result;
     }
 
     /**

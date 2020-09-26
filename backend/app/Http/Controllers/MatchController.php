@@ -5,7 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Requests\MatchCreateRequest;
 use App\Models\Match;
 use App\Models\User;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 
 class MatchController extends Controller
 {
@@ -14,13 +19,14 @@ class MatchController extends Controller
      * Show the form for creating a new resource.
      *
      * @param MatchCreateRequest $request
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|Response|View
      */
     public function create(MatchCreateRequest $request)
     {
         $me = Auth::user();
         $opponentId = $request->get('opponent_id');
         $opponent = User::find($opponentId);
+
         return view('matches.create', compact('me', 'opponent'));
     }
 
@@ -28,7 +34,8 @@ class MatchController extends Controller
      * Store a newly created resource in storage.
      *
      * @param MatchCreateRequest $request
-     * @return \Illuminate\Http\Response
+     * @return RedirectResponse
+     * @return Application|Factory|Response|View
      */
     public function store(MatchCreateRequest $request)
     {

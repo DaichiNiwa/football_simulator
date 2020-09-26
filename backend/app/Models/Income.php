@@ -22,8 +22,6 @@ class Income extends Model
     ];
 
     /**
-     * @param int $userId
-     * @param int $matchId
      */
     public static function winInitialBonus() {
         self::create([
@@ -47,14 +45,28 @@ class Income extends Model
     }
 
     /**
-     * @param int $matchId
+     * @param Affiliation $affiliation
      */
-    public static function SellPlayer(Affiliation $affiliation) {
+    public static function sellPlayer(Affiliation $affiliation) {
         self::create([
             'user_id' => Auth::user()->id,
             'foreign_id' => $affiliation->id,
             'pelica_amount' => $affiliation->currentPrice(),
             'type' => IncomeType::SellingPlayer,
+        ]);
+    }
+
+    /**
+     * @param User $user
+     * @param LoanOption $loanOption
+     * @param LoanRecord $loanRecord
+     */
+    public static function loan(User $user, LoanOption $loanOption, LoanRecord $loanRecord) {
+        self::create([
+            'user_id' => $user->id,
+            'foreign_id' => $loanRecord->id,
+            'pelica_amount' => $loanOption->pelica_amount,
+            'type' => IncomeType::Loan,
         ]);
     }
 }

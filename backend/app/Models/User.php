@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Collection as CollectionAlias;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -77,25 +78,29 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Match');
     }
 
-//    public function regular_players()
-//    {
-//        return $this->belongsToMany(
-//            'App\Models\Player',
-//            'affiliations',
-//            'user_id',
-//            'player_id',
-//        )->wherePivot('is_regular', true);
-//    }
-//
-//    public function reserve_players()
-//    {
-//        return $this->belongsToMany(
-//            'App\Models\Player',
-//            'affiliations',
-//            'user_id',
-//            'player_id',
-//        )->wherePivot('is_regular', false);
-//    }
+    /**
+     * @return HasMany
+     */
+    public function incomes()
+    {
+        return $this->hasMany('App\Models\Income');
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function outgoes()
+    {
+        return $this->hasMany('App\Models\Outgo');
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function loanRecords()
+    {
+        return $this->hasMany('App\Models\LoanRecord');
+    }
 
     /**
      * @return HasMany
@@ -106,7 +111,7 @@ class User extends Authenticatable
     }
 
     /**
-     * @return Builder[]|\Illuminate\Database\Eloquent\Collection|HasMany[]
+     * @return Builder[]|CollectionAlias|HasMany[]
      */
     public function goalkeepersInRegular() {
         return $this->regularPlayers()
@@ -160,6 +165,38 @@ class User extends Authenticatable
      */
     public function date() {
         return 1 + $this->matches()->count();
+    }
+
+    /**
+     * @return int
+     */
+    public function currentPelica() {
+        $totalIncome = $this->incomes()->sum('pelica_amount');
+        $totalOutgo = $this->outgoes()->sum('pelica_amount');
+        return $totalIncome - $totalOutgo;
+    }
+
+    /**
+     * @return LoanRecord | null
+     */
+    public function unpaidLoan() {
+        $UnpaidLoan = $this->loanRecords()->where('is_repaid', false)->first();
+        return $UnpaidLoan;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasUnpaidLoan() {
+        $hasUnpaidLoan = $this->unpaidLoan();
+        return isset($hasUnpaidLoan);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isOverLoanDeadline() {
+        return $this->hasUnpaidLoan() && $this->unpaidLoan()->isOverDeadline();
     }
 
     /**

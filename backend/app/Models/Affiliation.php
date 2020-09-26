@@ -12,6 +12,8 @@ class Affiliation extends Model
 {
     use HasFactory;
 
+    const PRICE_DOWN_RATE = 0.8;
+
     protected $fillable = [
         'user_id',
         'player_id',
@@ -67,13 +69,13 @@ class Affiliation extends Model
     }
 
     /**
-     * @param int $player_id
+     * @param Player $player
      */
-    public static function storeAffiliation(int $player_id)
+    public static function store(Player $player)
     {
         self::create([
             'user_id' => Auth::user()->id,
-            'player_id' => $player_id,
+            'player_id' => $player->id,
         ]);
     }
 
@@ -107,13 +109,19 @@ class Affiliation extends Model
     }
 
     /**
-     * NOTE: 選手の攻撃力か守備力が1上がると市場価格も1上がります
+     * 選手のデフォルトの売却価格は契約したときの価格より一定の割合で下がります。
+     * 選手の攻撃力か守備力が1上がると市場価格も1上がります
      * @return int
      */
     public function currentPrice()
     {
-        $defaultPrice = $this->player->price;
+        $defaultPrice = $this->player->price * self::PRICE_DOWN_RATE;
         $additionalPrice = $this->playerLevelUps()->count();
-        return $defaultPrice + $additionalPrice;
+        $currentPrice = floor($defaultPrice + $additionalPrice);
+
+        if ($currentPrice < 1) {
+            $currentPrice = 1;
+        }
+        return $currentPrice;
     }
 }

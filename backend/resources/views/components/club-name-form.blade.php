@@ -1,6 +1,6 @@
-<p class="font-semibold text-xl text-gray-800 leading-tight">クラブ名登録</p>
+<p class="font-semibold text-xl text-gray-800 leading-tight mb-4">クラブ名登録</p>
+<p class="mb-4"><strong>クラブ名を登録すると初回ボーナス20ペリカがもらえます。</strong></p>
 <p class="mb-4">クラブ名は一度登録すると変更できません。</p>
-<p class="mb-4">クラブ名を登録すると初回ボーナス20ペリカがもらえます。</p>
 <form method="POST" action="{{ route('users.update', $user) }}">
     @csrf
     @method('PATCH')

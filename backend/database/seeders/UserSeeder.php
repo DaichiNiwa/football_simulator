@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
                 'name' => 'テスト太郎',
                 'email' => 'test@test.com',
                 'email_verified_at' => now(),
-                'club_name' => 'テストチーム１',
+                'club_name' => 'テストクラブ１',
                 'password' => Hash::make('password'),
                 'remember_token' => Str::random(10),
             ]

@@ -5,6 +5,10 @@
         </p>
     </x-slot>
 
+    @if($user->hasUnpaidLoan())
+        <x-loan-notify :user="$user"/>
+    @endif
+
     @if(isset($user->club_name))
         <p class="font-semibold text-4xl text-gray-800 leading-tight">
             {{ $user->club_name }}
@@ -13,8 +17,8 @@
         <x-club-name-form :user="$user"/>
     @endif
 
-    <x-regular-players-table />
+    <x-regular-players-table/>
 
-    <x-reserve-players-table />
+    <x-reserve-players-table/>
 
 </x-app-layout>

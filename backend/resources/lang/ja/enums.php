@@ -2,6 +2,7 @@
 
 use App\Enums\Country;
 use App\Enums\IncomeType;
+use App\Enums\OutgoType;
 use App\Enums\PlayerSkillType;
 
 return [
@@ -27,5 +28,10 @@ return [
         IncomeType::MatchPrize => '賞金',
         IncomeType::SellingPlayer => '選手売却',
         IncomeType::Loan => 'ローン',
+    ],
+
+    OutgoType::class => [
+        OutgoType::BuyingPlayer => '選手契約',
+        OutgoType::Loan => 'ローン',
     ],
 ];

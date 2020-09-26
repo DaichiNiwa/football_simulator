@@ -43,15 +43,12 @@ class PlayerLevelUp extends Model
 
     /**
      * @param Collection $result
-     * @return Collection
      */
     public static function levelUp(Collection $result)
     {
         $result->levelUpPlayer = self::selectLevelUpPlayer();
         $result->levelUpSkill = self::selectLevelUpSkill();
         self::recordLevelUp($result->matchId, $result->levelUpPlayer, $result->levelUpSkill);
-
-        return $result;
     }
 
     /**

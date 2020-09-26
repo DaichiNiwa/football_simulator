@@ -49,7 +49,7 @@ class UserController extends Controller
             $clubNameStoreService = app('App\Services\ClubNameStoreService');
             $clubNameStoreService::execute($user, $club_name);
 
-            $request->session()->flash('success', 'クラブ名を登録しました。');
+            $request->session()->flash('success', 'クラブ名を登録しました。初回ボーナス20ペリカを獲得しました。');
         }
 
         return back();

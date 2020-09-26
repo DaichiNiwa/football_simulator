@@ -12,8 +12,8 @@ use BenSampo\Enum\Enum;
  */
 final class IncomeType extends Enum implements LocalizedEnum
 {
-    const InitialBonus =   0;
-    const MatchPrize =   1;
-    const SellingPlayer =   2;
+    const InitialBonus = 0;
+    const MatchPrize = 1;
+    const SellingPlayer = 2;
     const Loan = 3;
 }

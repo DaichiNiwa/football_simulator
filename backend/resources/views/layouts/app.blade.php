@@ -54,15 +54,23 @@
                     </div>
 
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('me') }}" :active="request()->routeIs('me')">
+                        <x-jet-nav-link href="{{ route('loans.index') }}" :active="request()->routeIs('loans.index')">
                             銀行
                         </x-jet-nav-link>
                     </div>
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link>
+                            {{ Auth::user()->currentPelica() }}ペリカ所持
+                        </x-jet-nav-link>
+                    </div>
+
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-jet-nav-link>
                             総合力：{{ Auth::user()->clubStrength() }}
                         </x-jet-nav-link>
                     </div>
+
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-jet-nav-link>
                             第{{ Auth::user()->date() }}日目
@@ -136,8 +144,14 @@
             </div>
 
             <div class="pt-2 pb-3 space-y-1">
-                <x-jet-responsive-nav-link href="{{ route('me') }}" :active="request()->routeIs('me')">
+                <x-jet-responsive-nav-link href="{{ route('loans.index') }}" :active="request()->routeIs('loans.index')">
                     銀行
+                </x-jet-responsive-nav-link>
+            </div>
+
+            <div class="pt-2 pb-3 space-y-1">
+                <x-jet-responsive-nav-link>
+                    {{ Auth::user()->currentPelica() }}ペリカ所持
                 </x-jet-responsive-nav-link>
             </div>
 
