@@ -4,6 +4,7 @@
             試合結果
         </p>
     </x-slot>
+
     @if($result->isMeWinner)
         <p class="font-semibold text-xl text-gray-800 leading-tight">
             勝利！

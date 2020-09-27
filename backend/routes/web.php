@@ -21,7 +21,7 @@ use App\Http\Controllers\MatchController;
 */
 Route::redirect('/', '/login');
 
-Route::middleware('auth')->group(static function () {
+Route::middleware('auth', 'loanDeadline')->group(static function () {
 
     Route::get('users/me',
         [UserController::class, 'show']

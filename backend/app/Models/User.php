@@ -202,6 +202,13 @@ class User extends Authenticatable
     /**
      * @return bool
      */
+    public function isTodayLoanDeadline() {
+        return $this->hasUnpaidLoan() && $this->unpaidLoan()->isTodayLoanDeadline();
+    }
+
+    /**
+     * @return bool
+     */
     private function isOneGoalkeeperInRegular() {
         return $this->goalkeepersInRegular()->count() === 1;
     }

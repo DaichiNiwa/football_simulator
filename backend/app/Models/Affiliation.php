@@ -124,4 +124,12 @@ class Affiliation extends Model
         }
         return $currentPrice;
     }
+
+    /**
+     */
+    public function endContract()
+    {
+        $this->is_under_contract = false;
+        $this->save();
+    }
 }

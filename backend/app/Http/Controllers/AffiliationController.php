@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AffiliationController extends Controller
 {
+    const AFFILIATIONS_COUNT_LIMIT = 25;
 
     /**
      * @param AffiliationStoreRequest $request
@@ -22,6 +23,13 @@ class AffiliationController extends Controller
 
         if($player->price > Auth::user()->currentPelica()) {
             return back()->with('error', '所持ペリカが足りません。');
+        }
+
+        if(Auth::user()->affiliations->count() >= self::AFFILIATIONS_COUNT_LIMIT) {
+            return back()->with(
+                'error',
+                '選手数が上限（' . self::AFFILIATIONS_COUNT_LIMIT . '人）に達しているため、これ以上契約できません。'
+            );
         }
 
         $affiliationStoreService = app('App\Services\AffiliationStoreService');

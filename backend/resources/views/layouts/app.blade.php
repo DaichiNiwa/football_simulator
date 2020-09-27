@@ -144,7 +144,8 @@
             </div>
 
             <div class="pt-2 pb-3 space-y-1">
-                <x-jet-responsive-nav-link href="{{ route('loans.index') }}" :active="request()->routeIs('loans.index')">
+                <x-jet-responsive-nav-link href="{{ route('loans.index') }}"
+                                           :active="request()->routeIs('loans.index')">
                     銀行
                 </x-jet-responsive-nav-link>
             </div>
@@ -208,6 +209,10 @@
     <!-- Page Content -->
     <main>
 
+        @if (session('notice'))
+            <x-notice-bar/>
+        @endif
+
         @if (session('success'))
             <div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4" role="alert">
                 <p>{{ session('success') }}</p>
@@ -217,6 +222,7 @@
                 <p>{{ session('error') }}</p>
             </div>
         @endif
+
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white p-6 overflow-hidden shadow-xl sm:rounded-lg">

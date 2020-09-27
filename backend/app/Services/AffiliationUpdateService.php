@@ -13,9 +13,7 @@ class AffiliationUpdateService
     {
         DB::transaction(
             function () use ($affiliation) {
-                $affiliation->is_under_contract = false;
-                $affiliation->save();
-
+                $affiliation->endContract();
                 Income::sellPlayer($affiliation);
             }
         );

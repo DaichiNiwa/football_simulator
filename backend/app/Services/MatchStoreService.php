@@ -26,7 +26,7 @@ class MatchStoreService
 
                 // NOTE: 試合をして1日進んだ結果、ローンの返済期限を過ぎてしまった場合、強制返済される
                 if ($me->isOverLoanDeadline()) {
-                    dd('error');
+                   $me->unpaidLoan()->forcedRepayment();
                 }
 
                 return $result;

@@ -62,5 +62,18 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'loanDeadline' => \App\Http\Middleware\CheckIsTodayLoanDeadline::class,
+    ];
+
+    /**
+     * ミドルウェアの優先順リスト
+     *
+     * グローバルではないミドルウェアを常に指定順に強要する
+     *
+     * @var array
+     */
+    protected $middlewarePriority = [
+//        \App\Http\Middleware\Authenticate::class,
+//        \App\Http\Middleware\CheckIsTodayLoanDeadline::class,
     ];
 }
