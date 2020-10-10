@@ -49,6 +49,5 @@ class LoanRecordController extends Controller
         $loanRecordUpdateService::execute($loanRecord);
 
         return back()->with('success', 'ローンを返済しました。');
-
     }
 }
