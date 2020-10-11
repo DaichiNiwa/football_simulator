@@ -3,10 +3,12 @@
 use App\Http\Controllers\AffiliationController;
 use App\Http\Controllers\LoanOptionController;
 use App\Http\Controllers\LoanRecordController;
+use App\Models\Player;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\MatchController;
+use App\Http\Resources\Player as PlayerResource;
 
 
 /*
@@ -61,5 +63,13 @@ Route::middleware('auth', 'loanDeadline')->group(static function () {
         ['only' => ['store', 'update']]
     );
 
+});
+
+Route::get('/api/players', function () {
+    return PlayerResource::collection(Player::all());
+});
+
+Route::get('/api/players/{player}', function () {
+    return new PlayerResource(Player::find(2));
 });
 
