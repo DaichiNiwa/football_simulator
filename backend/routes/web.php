@@ -61,9 +61,5 @@ Route::middleware('auth', 'loanDeadline')->group(static function () {
         ['only' => ['store', 'update']]
     );
 
-//    Route::get('dashboard', function () {
-//        return view('dashboard');
-//    })->name('dashboard');
-
 });
 

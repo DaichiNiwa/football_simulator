@@ -5,6 +5,7 @@
         </p>
     </x-slot>
 
+    <p>{{ $result->meScore }} - {{ $result->opponentScore }}</p>
     @if($result->isMeWinner)
         <p class="font-semibold text-xl text-gray-800 leading-tight">
             勝利！
