@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\MatchCreateRequest;
 use App\Models\Match;
 use App\Models\User;
+use App\Services\MatchStoreService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
@@ -30,14 +31,13 @@ class MatchController extends Controller
         return view('matches.create', compact('me', 'opponent'));
     }
 
+
     /**
-     * Store a newly created resource in storage.
-     *
      * @param MatchCreateRequest $request
-     * @return RedirectResponse
-     * @return Application|Factory|Response|View
+     * @param MatchStoreService $matchStoreService
+     * @return Application|Factory|RedirectResponse|View
      */
-    public function store(MatchCreateRequest $request)
+    public function store(MatchCreateRequest $request, MatchStoreService $matchStoreService)
     {
         $me = Auth::user();
         $opponentId = $request->get('opponent_id');
@@ -47,8 +47,7 @@ class MatchController extends Controller
            return back()->with('error', 'あなたか対戦相手のレギュラーメンバーが揃っていないため、試合ができませんでした。');
         }
 
-        $matchStoreService = app('App\Services\MatchStoreService');
-        $result = $matchStoreService::execute($me, $opponent);
+        $result = $matchStoreService->execute($me, $opponent);
 
         return view('matches.result', compact('result'));
     }

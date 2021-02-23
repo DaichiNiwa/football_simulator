@@ -220,6 +220,9 @@ class User extends Authenticatable
         return $this->regularPlayers()->count() === 11;
     }
 
+    /**
+     * @return int
+     */
     private function sumRegularPlayersStrength() {
         $regularPlayers = $this->regularPlayers()->get();
         $sum = 0;
@@ -231,7 +234,31 @@ class User extends Authenticatable
         return $sum;
     }
 
+    /**
+     * @return int
+     */
+    public function totalAttackLevelOfRegularPlayers() {
+        $regularPlayers = $this->regularPlayers()->get();
+        $sum = 0;
 
+        foreach ($regularPlayers as $regularPlayer) {
+            $sum += $regularPlayer->currentAttackLevel();
+        }
 
+        return $sum;
+    }
 
+    /**
+     * @return int
+     */
+    public function totalDefenseLevelOfRegularPlayers() {
+        $regularPlayers = $this->regularPlayers()->get();
+        $sum = 0;
+
+        foreach ($regularPlayers as $regularPlayer) {
+            $sum += $regularPlayer->currentDefenseLevel();
+        }
+
+        return $sum;
+    }
 }

@@ -11,13 +11,18 @@ use Illuminate\Support\Facades\DB;
 
 class MatchStoreService
 {
-    public static function execute(User $me, User $opponent)
+    /**
+     * @param User $me
+     * @param User $opponent
+     * @return mixed
+     */
+    public function execute(User $me, User $opponent)
     {
         return DB::transaction(
             function () use ($me, $opponent) {
                 $result = new Collection();
 
-                self::playMatch($me, $opponent, $result);
+                $this->playMatch($me, $opponent, $result);
 
                 if ($result->isMeWinner) {
                     PlayerLevelUp::levelUp($result);
@@ -26,13 +31,12 @@ class MatchStoreService
 
                 // NOTE: 試合をして1日進んだ結果、ローンの返済期限を過ぎてしまった場合、強制返済される
                 if ($me->isOverLoanDeadline()) {
-                   $me->unpaidLoan()->forcedRepayment();
+                    $me->unpaidLoan()->forcedRepayment();
                 }
 
                 return $result;
             });
     }
-
 
     /**
      * @param User $me
@@ -40,30 +44,25 @@ class MatchStoreService
      * @param Collection $result
      * @return Collection
      */
-    private static function playMatch(User $me, User $opponent, Collection $result)
+    private function playMatch(User $me, User $opponent, Collection $result)
     {
-        $result->isMeWinner = self::decideWinner($me, $opponent);
-        $result->matchId = self::recordMatch($me, $opponent, $result->isMeWinner);
+        $calculateScoreService = app('App\Services\CalculateScoreService');
+
+        $result->meScore = $calculateScoreService->execute($me->totalAttackLevelOfRegularPlayers(), $opponent->totalDefenseLevelOfRegularPlayers());
+        $result->opponentScore = $calculateScoreService->execute($opponent->totalAttackLevelOfRegularPlayers(), $me->totalDefenseLevelOfRegularPlayers());
+        $result->isMeWinner = $this->decideWinner($result->meScore, $result->opponentScore);
+        $result->matchId = $this->recordMatch($me, $opponent, $result->isMeWinner);
     }
 
+
     /**
-     * このメソッドが勝敗を決めるロジックです。
-     * 例えば自分の総合力が60、相手の総合力が40の場合、
-     * 1から100（2人の総合力の合計）の間で乱数を発生させ、
-     * 乱数が60以下の場合、自分の勝ち、
-     * 60より大きい場合、相手の勝ちとなります。
-     * @param User $me
-     * @param User $opponent
+     * @param int $meScore
+     * @param int $opponentScore
      * @return bool
      */
-    private static function decideWinner(User $me, User $opponent)
+    private function decideWinner(int $meScore, int $opponentScore)
     {
-        $meWinningRate = $me->clubStrength();
-        $opponentWinningRate = $opponent->clubStrength();
-
-        $resultNumber = mt_rand(1, $meWinningRate + $opponentWinningRate);
-
-        if ($resultNumber <= $meWinningRate) {
+        if ($meScore > $opponentScore) {
             return true;
         }
 
@@ -75,7 +74,7 @@ class MatchStoreService
      * @param User $opponent
      * @param bool $isMeWinner
      */
-    private static function recordMatch(User $me, User $opponent, bool $isMeWinner)
+    private function recordMatch(User $me, User $opponent, bool $isMeWinner)
     {
         $match = Match::create([
             'user_id' => $me->id,
