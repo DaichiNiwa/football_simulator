@@ -23,28 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9239365-bda2-42b9-88da-a1070bd52ea0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Services/CalculateScoreService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_ide_helper_models.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper_models.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MatchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/LoanRecord.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/LoanRecord.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/MatchStoreService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/MatchStoreService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/AffiliationFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/AffiliationFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/PlayerFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/PlayerFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/matches/result.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/matches/result.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/RouteTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/RouteTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -199,7 +185,7 @@
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -216,7 +202,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607788544692</updated>
-      <workItem from="1607788545842" duration="23232000" />
+      <workItem from="1607788545842" duration="23763000" />
+      <workItem from="1613882230436" duration="1362000" />
     </task>
     <servers />
   </component>
@@ -233,12 +220,15 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="664" y="268" key="SettingsEditor" timestamp="1607790009109">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state x="3224" y="268" key="SettingsEditor" timestamp="1613882646170">
+      <screen x="2560" y="0" width="2560" height="1440" />
     </state>
+    <state x="3224" y="268" key="SettingsEditor/0.0.2560.1440/2560.0.2560.1440@2560.0.2560.1440" timestamp="1613882646170" />
     <state x="664" y="268" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1607790009109" />
+    <state x="3224" y="582" key="SettingsEditor/2560.314.2560.1440/0.0.2560.1440@2560.314.2560.1440" timestamp="1609295200471" />
     <state width="625" height="500" key="SwitcherDM" timestamp="1608385410169">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
