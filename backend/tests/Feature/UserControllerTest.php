@@ -4,16 +4,18 @@ namespace Tests\Feature;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
 use Tests\TestCase;
 
 class UserControllerTest extends TestCase
 {
     use RefreshDatabase;
+
     /**
      * @test
      */
-    public function update()
+    public function registerClubName()
     {
         $user = User::factory()
             ->create([
@@ -23,9 +25,9 @@ class UserControllerTest extends TestCase
         $clubName = ['club_name' => 'テストクラブ'];
 
         $this->actingAs($user);
-        $this->patch(route('users.update',['user' => $user]),
+        $this->patch(route('club-name',['user' => $user]),
             $clubName)
-            ->assertStatus(302);
+            ->assertStatus(Response::HTTP_FOUND);
 
         $this->assertDatabaseHas('users', [
             'id' => $user->id,
@@ -48,9 +50,9 @@ class UserControllerTest extends TestCase
         $clubName = ['club_name' => 'テストのために一生懸命名前を考えて作ったとても愛着のあるクラブ'];
 
         $this->actingAs($user);
-        $response = $this->patch(route('users.update',['user' => $user]),
+        $response = $this->patch(route('club-name',['user' => $user]),
             $clubName);
-        $response->assertStatus(302);
+        $response->assertStatus(Response::HTTP_FOUND);
 
         $this->assertDatabaseMissing('users', [
             'id' => $user->id,
