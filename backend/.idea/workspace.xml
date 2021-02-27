@@ -23,7 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9239365-bda2-42b9-88da-a1070bd52ea0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/club-name-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/club-name-form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,6 +178,9 @@
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
       <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/vendor/aws/aws-sdk-php" />
+      <path value="$PROJECT_DIR$/vendor/mtdowling/jmespath.php" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem-aws-s3-v3" />
     </include_path>
   </component>
   <component name="ProjectId" id="1lYyusqrgTRYI5YIrLngqGkkBkb" />
@@ -185,7 +195,7 @@
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -223,11 +233,12 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="3224" y="268" key="SettingsEditor" timestamp="1613882646170">
-      <screen x="2560" y="0" width="2560" height="1440" />
+    <state x="3224" y="288" key="SettingsEditor" timestamp="1614422471503">
+      <screen x="2560" y="25" width="2560" height="1415" />
     </state>
     <state x="3224" y="268" key="SettingsEditor/0.0.2560.1440/2560.0.2560.1440@2560.0.2560.1440" timestamp="1613882646170" />
     <state x="664" y="268" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1607790009109" />
+    <state x="3224" y="288" key="SettingsEditor/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614422471503" />
     <state x="3224" y="582" key="SettingsEditor/2560.314.2560.1440/0.0.2560.1440@2560.314.2560.1440" timestamp="1609295200471" />
     <state width="625" height="500" key="SwitcherDM" timestamp="1608385410169">
       <screen x="0" y="0" width="2560" height="1440" />
@@ -237,9 +248,10 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="237" y="495" width="799" height="482" key="com.jetbrains.php.test.PhpNewTestDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1608465013559" />
-    <state x="861" y="324" width="838" height="1032" key="search.everywhere.popup" timestamp="1607789754342">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state x="3421" y="343" width="838" height="1015" key="search.everywhere.popup" timestamp="1614423255682">
+      <screen x="2560" y="25" width="2560" height="1415" />
     </state>
     <state x="861" y="324" width="838" height="1032" key="search.everywhere.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1607789754342" />
+    <state x="3421" y="343" width="838" height="1015" key="search.everywhere.popup/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614423255682" />
   </component>
 </project>

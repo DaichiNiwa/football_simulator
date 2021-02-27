@@ -14,24 +14,19 @@ use Illuminate\View\View;
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return Application|Factory|Response|View
+     * @return Application|Factory|View
      */
     public function index()
     {
         $me = Auth::User();
-        // TODO: 変数名を単数形に直す
         $opponents = User::where('id', '!=', $me->id)->get();
         return view('users.index', compact('me', 'opponents'));
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @return Application|Factory|Response|View
+     * @return Application|Factory|View
      */
-    public function show()
+    public function me()
     {
         $user = Auth::user();
         return view('users.show', compact('user'));
@@ -43,7 +38,7 @@ class UserController extends Controller
      * @param ClubNameStoreRequest $request
      * @return RedirectResponse
      */
-    public function update(ClubNameStoreRequest $request)
+    public function registerClubName(ClubNameStoreRequest $request)
     {
         $user = Auth::user();
 

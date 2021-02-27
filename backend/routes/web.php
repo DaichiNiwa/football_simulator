@@ -24,12 +24,16 @@ Route::redirect('/', '/login');
 Route::middleware('auth', 'loanDeadline')->group(static function () {
 
     Route::get('users/me',
-        [UserController::class, 'show']
+        [UserController::class, 'me']
     )->name('me');
+
+    Route::patch('club-name',
+        [UserController::class, 'registerClubName']
+    )->name('club-name');
 
     Route::resource('users',
         UserController::class,
-        ['only' => ['index', 'update']]
+        ['only' => ['index']]
     );
 
     Route::resource('players',
