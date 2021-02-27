@@ -75,6 +75,7 @@ class UserControllerTest extends TestCase
         )
             ->assertStatus(Response::HTTP_FOUND);
         $response->assertSessionHas('success', 'クラブ画像を更新しました。');
-        Storage::disk('s3')->assertExists('test.jpg');
+        $filename = $user->id . '_'. now()->format('Y_m_d_H_i_s');
+        Storage::disk('s3')->assertExists($filename);
     }
 }
