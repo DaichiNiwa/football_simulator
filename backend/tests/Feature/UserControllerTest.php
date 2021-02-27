@@ -25,8 +25,7 @@ class UserControllerTest extends TestCase
         $clubName = ['club_name' => 'テストクラブ'];
 
         $this->actingAs($user);
-        $this->patch(route('club-name',['user' => $user]),
-            $clubName)
+        $this->patch(route('club-name'), $clubName)
             ->assertStatus(Response::HTTP_FOUND);
 
         $this->assertDatabaseHas('users', [
@@ -50,9 +49,8 @@ class UserControllerTest extends TestCase
         $clubName = ['club_name' => 'テストのために一生懸命名前を考えて作ったとても愛着のあるクラブ'];
 
         $this->actingAs($user);
-        $response = $this->patch(route('club-name',['user' => $user]),
-            $clubName);
-        $response->assertStatus(Response::HTTP_FOUND);
+        $response = $this->patch(route('club-name'), $clubName)
+            ->assertStatus(Response::HTTP_FOUND);
 
         $this->assertDatabaseMissing('users', [
             'id' => $user->id,
