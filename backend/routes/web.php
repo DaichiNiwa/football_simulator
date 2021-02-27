@@ -31,6 +31,10 @@ Route::middleware('auth', 'loanDeadline')->group(static function () {
         [UserController::class, 'registerClubName']
     )->name('club-name');
 
+    Route::patch('club-image',
+        [UserController::class, 'updateClubImage']
+    )->name('club-image');
+
     Route::resource('users',
         UserController::class,
         ['only' => ['index']]

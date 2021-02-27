@@ -5,6 +5,8 @@ namespace Tests\Feature;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\Response;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\ValidationException;
 use Tests\TestCase;
 
@@ -59,4 +61,20 @@ class UserControllerTest extends TestCase
         ]);
     }
 
+    public function testUpdateClubImage()
+    {
+        Storage::fake('s3');
+
+        $user = User::factory()->create([]);
+
+        $params = [
+            'file' => UploadedFile::fake()->image('test.jpg')
+        ];
+
+        $response = $this->actingAs($user)->patch(route('club-image'), $params
+        )
+            ->assertStatus(Response::HTTP_FOUND);
+        $response->assertSessionHas('success', 'クラブ画像を更新しました。');
+        Storage::disk('s3')->assertExists('test.jpg');
+    }
 }

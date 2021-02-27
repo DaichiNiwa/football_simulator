@@ -1,21 +1,14 @@
-<p class="font-semibold text-xl text-gray-800 leading-tight mb-4">クラブ名登録</p>
-<p class="mb-4"><strong>クラブ名を登録すると初回ボーナス20ペリカがもらえます。</strong></p>
-<p class="mb-4">クラブ名は一度登録すると変更できません。</p>
-<form method="POST" action="{{ route('club-name', $user) }}">
+<p class="font-semibold text-xl text-gray-800 leading-tight my-4">クラブ画像</p>
+<img src="{{ env('IMG_URL') . $user->club_image}}">
+<form method="POST" action="{{ route('club-image') }}" enctype="multipart/form-data">
     @csrf
     @method('PATCH')
 
-    <div>
-        <x-jet-label value="club_name"/>
-        <x-jet-input class="block mt-1 w-full" type="text" name="club_name" :value="old('club_name')" required
-                     autofocus autocomplete="club_name"/>
-    </div>
+    <input type="file" class="form-control" name="file">
 
     <x-jet-validation-errors class="mb-4"/>
 
-    <div class="flex items-center justify-end mt-4">
-        <x-jet-button class="ml-4">
-            登録
-        </x-jet-button>
-    </div>
+    <x-jet-button class="ml-4">
+        登録
+    </x-jet-button>
 </form>

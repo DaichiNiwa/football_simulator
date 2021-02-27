@@ -17,6 +17,8 @@
         <x-club-name-form :user="$user"/>
     @endif
 
+    <x-club-image-form :user="$user"/>
+
     <x-regular-players-table/>
 
     <x-reserve-players-table/>
