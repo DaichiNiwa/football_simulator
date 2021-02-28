@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ClubNameStoreRequest extends FormRequest
+class ClubImageUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class ClubNameStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'club_name' => ['required', 'string', 'max:20', 'unique:users,club_name']
+            'file' => ['required', 'image', 'mimes:jpeg,png,jpg', 'max:10240']
         ];
     }
 }
