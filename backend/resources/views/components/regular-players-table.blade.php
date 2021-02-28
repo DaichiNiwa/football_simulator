@@ -21,7 +21,6 @@
 @endif
 
 <table class="table-auto border-separate">
-    <x-jet-validation-errors class="mb-4"/>
     <thead>
     <tr>
         <th class="px-4 py-2"></th>
