@@ -64,7 +64,6 @@ class UserControllerTest extends TestCase
     public function testUpdateClubImage()
     {
         Storage::fake('s3');
-
         $user = User::factory()->create([]);
 
         $params = [
@@ -74,8 +73,8 @@ class UserControllerTest extends TestCase
         $response = $this->actingAs($user)->patch(route('club-image'), $params
         )
             ->assertStatus(Response::HTTP_FOUND);
+
         $response->assertSessionHas('success', 'クラブ画像を更新しました。');
-        $filename = $user->id . '_'. now()->format('Y_m_d_H_i_s');
-        Storage::disk('s3')->assertExists($filename);
+        Storage::disk('s3')->assertExists($user->fresh()->club_image);
     }
 }

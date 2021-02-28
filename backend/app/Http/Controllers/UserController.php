@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ClubImageUpdateRequest;
 use App\Http\Requests\ClubNameStoreRequest;
 use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
@@ -56,17 +55,19 @@ class UserController extends Controller
         return back();
     }
 
-    public function updateClubImage(Request $request)
+    public function updateClubImage(ClubImageUpdateRequest $request)
     {
-        // TODO: 全体にリファクタ
         $user = Auth::user();
         $image = $request->file('file');
+
+        // TODO: 以下の処理はServiceにする
         $filename = $user->id . '_'. now()->format('Y_m_d_H_i_s');
 
         Storage::disk('s3')->putFileAs('/', $image, $filename,'public');
 
         $user->club_image = $filename;
         $user->save();
+
         return back()->with('success', 'クラブ画像を更新しました。');
     }
 }
