@@ -2,36 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ClubImageUpdateRequest;
 use App\Http\Requests\ClubNameStoreRequest;
 use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return Application|Factory|Response|View
+     * @return Application|Factory|View
      */
     public function index()
     {
         $me = Auth::User();
-        // TODO: 変数名を単数形に直す
         $opponents = User::where('id', '!=', $me->id)->get();
         return view('users.index', compact('me', 'opponents'));
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @return Application|Factory|Response|View
+     * @return Application|Factory|View
      */
-    public function show()
+    public function me()
     {
         $user = Auth::user();
         return view('users.show', compact('user'));
@@ -43,7 +39,7 @@ class UserController extends Controller
      * @param ClubNameStoreRequest $request
      * @return RedirectResponse
      */
-    public function update(ClubNameStoreRequest $request)
+    public function registerClubName(ClubNameStoreRequest $request)
     {
         $user = Auth::user();
 
@@ -57,5 +53,21 @@ class UserController extends Controller
         }
 
         return back();
+    }
+
+    public function updateClubImage(ClubImageUpdateRequest $request)
+    {
+        $user = Auth::user();
+        $image = $request->file('file');
+
+        // TODO: 以下の処理はServiceにする
+        $filename = $user->id . '_'. now()->format('Y_m_d_H_i_s');
+
+        Storage::disk('s3')->putFileAs('/', $image, $filename,'public');
+
+        $user->club_image = $filename;
+        $user->save();
+
+        return back()->with('success', 'クラブ画像を更新しました。');
     }
 }
