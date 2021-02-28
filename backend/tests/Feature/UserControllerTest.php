@@ -4,16 +4,20 @@ namespace Tests\Feature;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\Response;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\ValidationException;
 use Tests\TestCase;
 
 class UserControllerTest extends TestCase
 {
     use RefreshDatabase;
+
     /**
      * @test
      */
-    public function update()
+    public function registerClubName()
     {
         $user = User::factory()
             ->create([
@@ -23,9 +27,8 @@ class UserControllerTest extends TestCase
         $clubName = ['club_name' => 'テストクラブ'];
 
         $this->actingAs($user);
-        $this->patch(route('users.update',['user' => $user]),
-            $clubName)
-            ->assertStatus(302);
+        $this->patch(route('club-name'), $clubName)
+            ->assertStatus(Response::HTTP_FOUND);
 
         $this->assertDatabaseHas('users', [
             'id' => $user->id,
@@ -48,9 +51,8 @@ class UserControllerTest extends TestCase
         $clubName = ['club_name' => 'テストのために一生懸命名前を考えて作ったとても愛着のあるクラブ'];
 
         $this->actingAs($user);
-        $response = $this->patch(route('users.update',['user' => $user]),
-            $clubName);
-        $response->assertStatus(302);
+        $response = $this->patch(route('club-name'), $clubName)
+            ->assertStatus(Response::HTTP_FOUND);
 
         $this->assertDatabaseMissing('users', [
             'id' => $user->id,
@@ -59,4 +61,20 @@ class UserControllerTest extends TestCase
         ]);
     }
 
+    public function testUpdateClubImage()
+    {
+        Storage::fake('s3');
+        $user = User::factory()->create([]);
+
+        $params = [
+            'file' => UploadedFile::fake()->image('test.jpg')
+        ];
+
+        $response = $this->actingAs($user)->patch(route('club-image'), $params
+        )
+            ->assertStatus(Response::HTTP_FOUND);
+
+        $response->assertSessionHas('success', 'クラブ画像を更新しました。');
+        Storage::disk('s3')->assertExists($user->fresh()->club_image);
+    }
 }

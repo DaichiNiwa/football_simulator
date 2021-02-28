@@ -23,7 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9239365-bda2-42b9-88da-a1070bd52ea0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/ClubImageUpdateRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/UserControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/UserControllerTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +40,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="app">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper" />
@@ -102,7 +105,6 @@
       <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
-      <path value="$PROJECT_DIR$/vendor/scrivo/highlight.php" />
       <path value="$PROJECT_DIR$/vendor/laravel/framework" />
       <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
       <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
@@ -123,7 +125,6 @@
       <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
-      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
       <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
@@ -138,7 +139,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/string" />
       <path value="$PROJECT_DIR$/vendor/symfony/mime" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
       <path value="$PROJECT_DIR$/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
@@ -171,6 +171,11 @@
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
       <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/vendor/aws/aws-sdk-php" />
+      <path value="$PROJECT_DIR$/vendor/mtdowling/jmespath.php" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem-aws-s3-v3" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
     </include_path>
   </component>
   <component name="ProjectId" id="1lYyusqrgTRYI5YIrLngqGkkBkb" />
@@ -183,16 +188,51 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Requests" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.folding" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Requests" />
+      <recent name="$PROJECT_DIR$/resources/views/components" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.UserControllerTest.testUpdateClubImage (1)">
+    <configuration name="AffiliationControllerTest.testStore" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\AffiliationControllerTest" configuration_file="/work/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/AffiliationControllerTest.php" method="testStore" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UserControllerTest.registerClubName" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\UserControllerTest" configuration_file="/work/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/UserControllerTest.php" method="registerClubName" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UserControllerTest.testUpdateClubImage (1)" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\UserControllerTest" configuration_file="/work/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/UserControllerTest.php" method="testUpdateClubImage" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UserControllerTest.testUpdateClubImage" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Http\Controllers\UserControllerTest" configuration_file="/work/phpunit.xml" file="$PROJECT_DIR$/tests/Http/Controllers/UserControllerTest.php" method="testUpdateClubImage" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UserControllerTest.update_バリデーションエラー" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\UserControllerTest" configuration_file="/work/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/UserControllerTest.php" method="update_バリデーションエラー" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.UserControllerTest.testUpdateClubImage (1)" />
+        <item itemvalue="PHPUnit.UserControllerTest.update_バリデーションエラー" />
+        <item itemvalue="PHPUnit.UserControllerTest.registerClubName" />
+        <item itemvalue="PHPUnit.UserControllerTest.testUpdateClubImage" />
+        <item itemvalue="PHPUnit.AffiliationControllerTest.testStore" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -204,6 +244,8 @@
       <updated>1607788544692</updated>
       <workItem from="1607788545842" duration="23763000" />
       <workItem from="1613882230436" duration="1362000" />
+      <workItem from="1614425301026" duration="10541000" />
+      <workItem from="1614497549744" duration="5000" />
     </task>
     <servers />
   </component>
@@ -223,23 +265,73 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="3224" y="268" key="SettingsEditor" timestamp="1613882646170">
-      <screen x="2560" y="0" width="2560" height="1440" />
+    <state x="3324" y="316" key="#CLI_Interpreters" timestamp="1614424122172">
+      <screen x="2560" y="25" width="2560" height="1415" />
+    </state>
+    <state x="3324" y="316" key="#CLI_Interpreters/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614424122172" />
+    <state x="3628" y="478" key="#Docker" timestamp="1614424090746">
+      <screen x="2560" y="25" width="2560" height="1415" />
+    </state>
+    <state x="3628" y="478" key="#Docker/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614424090746" />
+    <state x="3525" y="461" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1614497505762">
+      <screen x="2560" y="25" width="2560" height="1415" />
+    </state>
+    <state x="3525" y="461" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614497505762" />
+    <state x="3724" y="619" key="DockerComposeFileDialog" timestamp="1614423998371">
+      <screen x="2560" y="25" width="2560" height="1415" />
+    </state>
+    <state x="3724" y="619" key="DockerComposeFileDialog/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614423998371" />
+    <state width="2508" height="754" key="GridCell.Tab.0.bottom" timestamp="1614497518397">
+      <screen x="2560" y="25" width="2560" height="1415" />
+    </state>
+    <state width="2508" height="754" key="GridCell.Tab.0.bottom/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614497518397" />
+    <state width="2508" height="754" key="GridCell.Tab.0.center" timestamp="1614497518397">
+      <screen x="2560" y="25" width="2560" height="1415" />
+    </state>
+    <state width="2508" height="754" key="GridCell.Tab.0.center/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614497518397" />
+    <state width="2508" height="754" key="GridCell.Tab.0.left" timestamp="1614497518397">
+      <screen x="2560" y="25" width="2560" height="1415" />
+    </state>
+    <state width="2508" height="754" key="GridCell.Tab.0.left/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614497518397" />
+    <state width="2508" height="754" key="GridCell.Tab.0.right" timestamp="1614497518397">
+      <screen x="2560" y="25" width="2560" height="1415" />
+    </state>
+    <state width="2508" height="754" key="GridCell.Tab.0.right/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614497518397" />
+    <state x="3224" y="288" key="SettingsEditor" timestamp="1614425501945">
+      <screen x="2560" y="25" width="2560" height="1415" />
     </state>
     <state x="3224" y="268" key="SettingsEditor/0.0.2560.1440/2560.0.2560.1440@2560.0.2560.1440" timestamp="1613882646170" />
     <state x="664" y="268" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1607790009109" />
+    <state x="3224" y="288" key="SettingsEditor/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614425501945" />
     <state x="3224" y="582" key="SettingsEditor/2560.314.2560.1440/0.0.2560.1440@2560.314.2560.1440" timestamp="1609295200471" />
     <state width="625" height="500" key="SwitcherDM" timestamp="1608385410169">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="625" height="500" key="SwitcherDM/0.0.2560.1440@0.0.2560.1440" timestamp="1608385410169" />
-    <state x="237" y="495" width="799" height="482" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1608465013559">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state x="2797" y="511" width="871" height="474" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1614423674886">
+      <screen x="2560" y="25" width="2560" height="1415" />
     </state>
     <state x="237" y="495" width="799" height="482" key="com.jetbrains.php.test.PhpNewTestDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1608465013559" />
-    <state x="861" y="324" width="838" height="1032" key="search.everywhere.popup" timestamp="1607789754342">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state x="2797" y="511" width="871" height="474" key="com.jetbrains.php.test.PhpNewTestDialog/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614423674886" />
+    <state x="3421" y="343" width="838" height="1015" key="search.everywhere.popup" timestamp="1614424250468">
+      <screen x="2560" y="25" width="2560" height="1415" />
     </state>
     <state x="861" y="324" width="838" height="1032" key="search.everywhere.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1607789754342" />
+    <state x="3421" y="343" width="838" height="1015" key="search.everywhere.popup/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614424250468" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/tests/Feature/UserControllerTest.php</url>
+          <line>63</line>
+          <properties>
+            <option name="className" value="\Tests\Feature\UserControllerTest" />
+            <option name="methodName" value="testUpdateClubImage" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

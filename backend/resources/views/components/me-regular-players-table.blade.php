@@ -1,9 +1,3 @@
-<p class="font-semibold mt-8 text-xl text-blue-1000 leading-tight">
-    あなたのクラブ：{{ $user->club_name }}
-</p>
-<h2>（オーナー：{{ $user->name }}）</h2>
-<p>（レギュラー総合力：{{ $user->clubStrength() }}）</p>
-
 @if(!$user->canStartMatch())
     <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4 my-4" role="alert">
         <p>現在レギュラーメンバーが11人になっていないか、ゴールキーパーが1人ではないため、試合ができません。</p>
