@@ -23,12 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9239365-bda2-42b9-88da-a1070bd52ea0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/ClubImageUpdateRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/club-image-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/club-image-form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/club-name-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/club-name-form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Feature/UserControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/UserControllerTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -191,13 +188,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Requests" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.folding" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Requests" />
       <recent name="$PROJECT_DIR$/resources/views/components" />
     </key>
   </component>
@@ -246,7 +244,8 @@
       <updated>1607788544692</updated>
       <workItem from="1607788545842" duration="23763000" />
       <workItem from="1613882230436" duration="1362000" />
-      <workItem from="1614425301026" duration="8353000" />
+      <workItem from="1614425301026" duration="10541000" />
+      <workItem from="1614497549744" duration="5000" />
     </task>
     <servers />
   </component>
@@ -274,26 +273,30 @@
       <screen x="2560" y="25" width="2560" height="1415" />
     </state>
     <state x="3628" y="478" key="#Docker/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614424090746" />
+    <state x="3525" y="461" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1614497505762">
+      <screen x="2560" y="25" width="2560" height="1415" />
+    </state>
+    <state x="3525" y="461" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614497505762" />
     <state x="3724" y="619" key="DockerComposeFileDialog" timestamp="1614423998371">
       <screen x="2560" y="25" width="2560" height="1415" />
     </state>
     <state x="3724" y="619" key="DockerComposeFileDialog/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614423998371" />
-    <state width="2508" height="754" key="GridCell.Tab.0.bottom" timestamp="1614431840457">
+    <state width="2508" height="754" key="GridCell.Tab.0.bottom" timestamp="1614497518397">
       <screen x="2560" y="25" width="2560" height="1415" />
     </state>
-    <state width="2508" height="754" key="GridCell.Tab.0.bottom/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614431840457" />
-    <state width="2508" height="754" key="GridCell.Tab.0.center" timestamp="1614431840456">
+    <state width="2508" height="754" key="GridCell.Tab.0.bottom/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614497518397" />
+    <state width="2508" height="754" key="GridCell.Tab.0.center" timestamp="1614497518397">
       <screen x="2560" y="25" width="2560" height="1415" />
     </state>
-    <state width="2508" height="754" key="GridCell.Tab.0.center/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614431840456" />
-    <state width="2508" height="754" key="GridCell.Tab.0.left" timestamp="1614431840456">
+    <state width="2508" height="754" key="GridCell.Tab.0.center/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614497518397" />
+    <state width="2508" height="754" key="GridCell.Tab.0.left" timestamp="1614497518397">
       <screen x="2560" y="25" width="2560" height="1415" />
     </state>
-    <state width="2508" height="754" key="GridCell.Tab.0.left/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614431840456" />
-    <state width="2508" height="754" key="GridCell.Tab.0.right" timestamp="1614431840457">
+    <state width="2508" height="754" key="GridCell.Tab.0.left/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614497518397" />
+    <state width="2508" height="754" key="GridCell.Tab.0.right" timestamp="1614497518397">
       <screen x="2560" y="25" width="2560" height="1415" />
     </state>
-    <state width="2508" height="754" key="GridCell.Tab.0.right/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614431840456" />
+    <state width="2508" height="754" key="GridCell.Tab.0.right/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614497518397" />
     <state x="3224" y="288" key="SettingsEditor" timestamp="1614425501945">
       <screen x="2560" y="25" width="2560" height="1415" />
     </state>
