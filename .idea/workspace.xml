@@ -24,8 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f5837afc-9033-41bb-a761-710e876c07e5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/components/club-image.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/components/club-image.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Services/MatchStoreService.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Services/MatchStoreService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +231,7 @@
       <workItem from="1600530058980" duration="86281000" />
       <workItem from="1601298158485" duration="26586000" />
       <workItem from="1605367513227" duration="377000" />
-      <workItem from="1614511214201" duration="9300000" />
+      <workItem from="1614511214201" duration="10380000" />
     </task>
     <servers />
   </component>
