@@ -9,10 +9,12 @@ class TrustProxies extends Middleware
 {
     /**
      * The trusted proxies for this application.
+     * APP_URLをHTTPSにするために設定している。
+     * （ロードバランサーからアクセスするので、全てのIPアドレスを受け入れる設定にしている。）
      *
      * @var array|string|null
      */
-    protected $proxies;
+    protected $proxies = '*';
 
     /**
      * The headers that should be used to detect proxies.

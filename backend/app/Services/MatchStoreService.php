@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
+// TODO: テストを書く。リファクタする
 class MatchStoreService
 {
     /**
@@ -46,10 +47,21 @@ class MatchStoreService
      */
     private function playMatch(User $me, User $opponent, Collection $result)
     {
+        // TODO: constructでinjectionする
         $calculateScoreService = app('App\Services\CalculateScoreService');
 
         $result->meScore = $calculateScoreService->execute($me->totalAttackLevelOfRegularPlayers(), $opponent->totalDefenseLevelOfRegularPlayers());
         $result->opponentScore = $calculateScoreService->execute($opponent->totalAttackLevelOfRegularPlayers(), $me->totalDefenseLevelOfRegularPlayers());
+
+        // NOTE: 同点の時は、ランダムにどちらかに1点を加えて勝敗を決める
+        if ($result->meScore === $result->opponentScore) {
+            if (mt_rand(0, 1) === 1) {
+                $result->meScore++;
+            } else {
+                $result->opponentScore++;
+            }
+        }
+
         $result->isMeWinner = $this->decideWinner($result->meScore, $result->opponentScore);
         $result->matchId = $this->recordMatch($me, $opponent, $result->isMeWinner);
     }
