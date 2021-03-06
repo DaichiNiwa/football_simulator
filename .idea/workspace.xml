@@ -23,24 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5837afc-9033-41bb-a761-710e876c07e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Requests/ClubImageUpdateRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/resources/views/components/club-image.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/football_simulator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/football_simulator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/_ide_helper_models.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/_ide_helper_models.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/seeders/UserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/seeders/UserSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/components/club-image-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/components/club-image-form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/components/me-regular-players-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/components/me-regular-players-table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/components/opponent-regular-players-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/components/opponent-regular-players-table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/components/regular-players-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/components/regular-players-table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/matches/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/matches/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/users/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/UserControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Feature/UserControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/views/components/club-image.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/components/club-image.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +232,7 @@
       <workItem from="1600530058980" duration="86281000" />
       <workItem from="1601298158485" duration="26586000" />
       <workItem from="1605367513227" duration="377000" />
-      <workItem from="1614511214201" duration="3691000" />
+      <workItem from="1614511214201" duration="9300000" />
     </task>
     <servers />
   </component>
@@ -279,10 +264,14 @@
       <screen x="2560" y="25" width="2560" height="1415" />
     </state>
     <state x="3540" y="363" key="VCS.ChangeListViewerDialog/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614514722050" />
-    <state x="3421" y="342" width="838" height="1032" key="search.everywhere.popup" timestamp="1614515061226">
+    <state x="3464" y="270" width="751" height="924" key="find.popup" timestamp="1614993228011">
       <screen x="2560" y="25" width="2560" height="1415" />
     </state>
-    <state x="3421" y="342" width="838" height="1032" key="search.everywhere.popup/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614515061226" />
+    <state x="3464" y="270" width="751" height="924" key="find.popup/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614993228011" />
+    <state x="3421" y="342" width="838" height="1032" key="search.everywhere.popup" timestamp="1614865261718">
+      <screen x="2560" y="25" width="2560" height="1415" />
+    </state>
+    <state x="3421" y="342" width="838" height="1032" key="search.everywhere.popup/0.25.2560.1415/2560.25.2560.1415@2560.25.2560.1415" timestamp="1614865261718" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
